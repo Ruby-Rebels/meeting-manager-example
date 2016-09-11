@@ -5,5 +5,8 @@ json.array! @meetings.each do |meeting|
   json.start_time meeting.start_time
   json.end_time meeting.end_time
   json.notes meeting.notes
-  json.tags meeting.tags
+  json.tags meeting.tags.each do |tag|
+    json.id tag.id
+    json.name tag.name
+  end
 end
