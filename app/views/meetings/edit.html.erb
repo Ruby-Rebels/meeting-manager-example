@@ -1,0 +1,4 @@
+<h1>Edit the Meeting!</h1>
+<%= form_tag "/meetings/#{@meeting.id}", method: :patch do %>
+  <%= render 'form' %>
+<% end %>
