@@ -3,7 +3,14 @@
 
     <h1><a href="/meetings">All meetings</a></h1>
     <h3><a href="/meetings/new">Create a new meeting</a></h3>
-    <div ng-repeat="meeting in meetings">
+    <input type="text" ng-model="nameFilter" list="meetings">
+
+
+    <datalist id="meetings">
+      <option ng-repeat="meeting in meetings">{{ meeting.name }}</option>
+    </datalist>
+    <button ng-click="sortByDate()">Sort by Date</button>
+    <div ng-repeat="meeting in meetings | filter: {name: nameFilter} | orderBy:start_time:isReverse">
       <h3><a href="/meetings/{{meeting.id}}">{{ meeting.name }}</a></h3>
       <p>
         Tags:

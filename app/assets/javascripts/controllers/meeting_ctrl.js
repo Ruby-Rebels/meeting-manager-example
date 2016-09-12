@@ -7,5 +7,10 @@
         $scope.meetings = response.data;
       })
     }
+
+    $scope.sortByDate = function(orderAttribute) {
+      $scope.orderAttribute = orderAttribute;
+      $scope.isReverse = !$scope.isReverse;
+    }
   });
 })();
