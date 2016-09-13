@@ -20,5 +20,32 @@
       <p>Start time: {{ meeting.start_time | date : 'short' }} </p>
       <p>End time: {{ meeting.end_time | date : 'short'}}</p>
     </div>
+
+
+      <div>
+        <label for="name" >Name</label>
+        <input type="text" name="name" ng-model="meeting.name">
+      </div>
+      <div>
+        <label for="address" >Address</label>
+        <input type="text" name="address" ng-model="meeting.address">
+      </div>
+      <div>
+        <label for="start_time" >Start time</label>
+        <input type="datetime-local" name="start_time" ng-model="meeting.start_time">
+      </div>
+      <div>
+        <label for="end_time" >End time</label>
+        <input type="datetime-local" name="end_time" ng-model="meeting.end_time">
+      </div>
+      <div>
+        <label for="notes" >Notes</label>
+        <textarea name="notes" id="" cols="30" rows="10" ng-model="meeting.notes"></textarea>
+      </div>
+      <div>
+        <button ng-click="createMeeting(meeting)">Save Changes</button>
+        <!-- <input ng-click="createMeeting(meeting)" type="submit" value="Save changes"> -->
+      </div>
+
   </div>
 </div>

@@ -12,5 +12,14 @@
       $scope.orderAttribute = orderAttribute;
       $scope.isReverse = !$scope.isReverse;
     }
+
+    $scope.createMeeting = function(meeting) {
+      console.log(meeting);
+      $http.post('/api/v1/meetings.json', meeting).success(function(response) {
+        console.log(response);
+        $scope.meetings.push(meeting);
+        $scope.meeting = {};
+      })
+    }
   });
 })();
