@@ -19,6 +19,8 @@
         console.log(response);
         $scope.meetings.push(meeting);
         $scope.meeting = {};
+      }).error(function(response) {
+        $scope.errors = response.error;
       })
     }
   });
